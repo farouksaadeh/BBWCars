@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import CarItem from './components/CarItem';
 import RentForm from './components/RentForm';
 import Footer from './components/Footer';
-import Header from '../components/Header'; // Importiere den Header
-import logo from '../src/logo.svg'; // Importiert das Logo
+
 import './App.css';
 
 const App = () => {
