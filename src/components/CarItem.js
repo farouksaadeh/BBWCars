@@ -8,6 +8,8 @@ const CarItem = ({ car, onCarSelect }) => {
       <h3>{car.model}</h3>
       <p>Preis pro Tag: {car.price} CHF</p>
       <p>Kilometer inklusive: {car.kilometers} km</p>
+      <p>Standort: {car.location}</p>
+
     </div>
   );
 };
