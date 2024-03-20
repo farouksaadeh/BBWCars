@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import CarItem from './components/CarItem';
 import RentForm from './components/RentForm';
 import Footer from './components/Footer';
-import logo from './LogoBBW.png'; 
 
 
 const App = () => {
