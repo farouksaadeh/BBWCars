@@ -208,7 +208,7 @@ h2 {
 }
 
 .sort-options select:focus {
-    box-shadow: 0 0 0 2px #3498DB;
+    box-shadow: 0 0 0 2px #E0E0E0;
 }
 
 .sort-options select:hover {
