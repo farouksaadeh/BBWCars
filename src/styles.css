@@ -1,118 +1,267 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
 .app {
-    padding: 30px 20px 50px 20px;
+    padding: 40px 30px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-weight: 700;
+    color: #333;
 }
 
 h1 {
-    text-align: center;
-    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 h2 {
-    text-align: center;
-    font-weight: 600;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
 }
 
-.location-options {
-    padding-left: 60px;
-    padding-right: 60px;
-    margin-bottom: 20px; 
-}
-.sort-options {
-    padding-left: 60px;
-    padding-right: 60px;
-    margin-bottom: 20px; 
+.location-options,
+.sort-options,
+.car-list {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 30px;
 }
 
 .car-list {
     display: grid;
-    padding-left: 60px;
-    padding-right: 60px;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
 }
 
 .car-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f6f6f6;
     cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease, filter 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .car-item:hover {
-    transform: scale(1.02); 
-    border-color: #999; 
-    filter: brightness(90%); 
+    transform: scale(1.05);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 .car-item img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .rent-form {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .rent-form h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .rent-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    color: #777;
 }
 
 .rent-form input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
 }
 
 .rent-form button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px 25px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .rent-form button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .confirmation {
-    margin-top: 20px;
+    margin-top: 30px;
     background-color: #dff0d8;
     border: 1px solid #c3e6cb;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.confirmation h2 {
-    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 25px;
 }
 
 .footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    color: #777;
+    font-size: 14px;
 }
 
 .form {
-    padding: 60px;
+    padding: 80px;
 }
+
+
+.confirmation  h2 {
+    color: #28a745;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  .confirmation p {
+    color: #155724;
+    margin: 15px 0;
+    font-size: 1.25em;
+    text-align: justify;
+  }
+  
+  .location-options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.location-options label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.location-options input[type="radio"] {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-options label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.sort-options select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background: #f5f5f5;
+    color: #444;
+    outline: none;
+    width: 200px;
+}
+
+.sort-options select:focus {
+    box-shadow: 0 0 0 2px #3498DB;
+}
+
+.sort-options select:hover {
+    background: #E0E0E0;
+}
+
+.sort-options select:active {
+    background: #BDBDBD;
+    box-shadow: none;
+}
+
+.sort-options option {
+    background: #f5f5f5;
+    color: #444;
+}
+
+.toTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 99;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 50px;
+  }
+  
+  .toTopButton.show {
+    display: block;
+  }
+  
+  .toTopButton:hover {
+    opacity: 0.8;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .logo {
+    width: 100px; /* Passende Größe anpassen */
+    height: auto;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .scrolled {
+    padding: 10px; /* Ändern Sie die gepaddete Größe für den kleineren Header */
+    background-color: rgba(255, 255, 255, 0.9); /* Hintergrundfarbe für gescrollten Header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatten für gescrollten Header */
+  }
+  
+  .logo-container {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .logo-container img {
+    border-radius: 50%;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Füge hier weitere CSS-Stile hinzu, um den Header nach deinen Wünschen anzupassen */
+  

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CarItem from './components/CarItem';
 import RentForm from './components/RentForm';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 import './App.css';
 
@@ -255,5 +256,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
