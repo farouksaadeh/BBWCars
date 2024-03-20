@@ -1,3 +1,5 @@
+The BBW Cars was made by Farouk Saadeh and Namanja Stevanovic
+
 ## Link to BBW Cars GitHub Repository - Farouk Nemanja
 
 https://github.com/farouksaadeh/BBWCars
