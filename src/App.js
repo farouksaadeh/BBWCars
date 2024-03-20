@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import CarItem from './components/CarItem';
 import RentForm from './components/RentForm';
 import Footer from './components/Footer';
-import Header from './components/Header';
-import './App.css';
+import logo from './LogoBBW.png'; 
+
 
 const App = () => {
   const cars = [
@@ -179,7 +179,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>BBW Cars</h1>
-      <h2>Farouk & Nemanja</h2>
+      <h2>Autovermietung Winterthur</h2>
       {/* Radio-Buttons zur Auswahl der Location */}
       <div className="location-options">
         <label>

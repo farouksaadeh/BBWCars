@@ -53,10 +53,10 @@ const RentForm = ({ selectedCar, onRentSubmit }) => {
         <label>Adresse:</label>
         <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
 
-        <label>
-          <input type="checkbox" checked={agreeTerms} onChange={(e) => setAgreeTerms(e.target.checked)} required />
-          Ich akzeptiere die AGBs
-        </label>
+        <label className="checkbox-label">
+        <input type="checkbox" checked={agreeTerms} onChange={(e) => setAgreeTerms(e.target.checked)} required />
+        Ich akzeptiere die AGBs
+      </label>
 
         <button type="submit">Auto mieten</button>
       </form>

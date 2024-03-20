@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import githubLogo from '../githubLogo.png';
+
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,6 +32,14 @@ const Footer = () => {
     <footer className="footer">
       <p>&copy; 2024 BBWCars. Alle Rechte vorbehalten.</p>
       <p>Farouk Saadeh | Nemanja Stevanovic</p>
+      <br></br>
+      <a href="https://github.com/farouksaadeh/BBWCars" class="LinkFooter" role="button" target="_blank" rel="noopener noreferrer">
+    <img src={githubLogo} alt="GitHub Logo" class="logo" />
+    Unser GitHub Repo - BBW Cars
+</a>
+
+
+      
 
       <div
         className={`toTopButton ${isVisible ? 'show' : ''}`}
