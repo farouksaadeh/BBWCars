@@ -9,6 +9,8 @@ const RentForm = ({ selectedCar, onRentSubmit }) => {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [agreeTerms, setAgreeTerms] = useState(false);
+  const [over18, setOver18] = useState(false);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,14 +56,30 @@ const RentForm = ({ selectedCar, onRentSubmit }) => {
         <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required />
 
         <label className="checkbox-label">
-        <input type="checkbox" checked={agreeTerms} onChange={(e) => setAgreeTerms(e.target.checked)} required />
-        Ich akzeptiere die AGBs
-      </label>
+          <input
+            type="checkbox"
+            checked={agreeTerms}
+            onChange={(e) => setAgreeTerms(e.target.checked)}
+            required
+          />
+          Ich akzeptiere die AGBs
+        </label>
+
+        <label className="checkbox-label-ueber">
+          <input
+            type="checkbox"
+            checked={over18}
+            onChange={(e) => setOver18(e.target.checked)}
+            required
+          />
+          Ich akzeptiere, dass ich über 18 Jahre alt bin
+        </label>
 
         <button type="submit">Auto mieten</button>
       </form>
     </div>
   );
-};
+}
+
 
 export default RentForm;
