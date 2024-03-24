@@ -62,7 +62,7 @@ const RentForm = ({ selectedCar, onRentSubmit }) => {
             onChange={(e) => setAgreeTerms(e.target.checked)}
             required
           />
-          Ich akzeptiere die AGBs
+          Ich akzeptiere und stimme den AGBs zu.
         </label>
 
         <label className="checkbox-label-ueber">
@@ -72,7 +72,7 @@ const RentForm = ({ selectedCar, onRentSubmit }) => {
             onChange={(e) => setOver18(e.target.checked)}
             required
           />
-          Ich akzeptiere, dass ich über 18 Jahre alt bin
+          Ich bestätige, dass ich über 18 Jahre alt bin und einen gültigen Führerschein habe.
         </label>
 
         <button type="submit">Auto mieten</button>

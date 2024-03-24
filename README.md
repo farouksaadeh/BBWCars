@@ -4,6 +4,14 @@
 
 https://github.com/farouksaadeh/BBWCars
 
+## Install Befehle
+npm install
+npm install axios
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/react-fontawesome
+npm install @fortawesome/free-solid-svg-icons
+
+
 
 # Getting Started with Create React App
 

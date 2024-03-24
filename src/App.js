@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CarItem from './components/CarItem';
 import RentForm from './components/RentForm';
 import Footer from './components/Footer';
-
+import './styles.css';
 
 const App = () => {
   const cars = [
@@ -147,7 +147,7 @@ const App = () => {
   const [confirmation, setConfirmation] = useState(null);
   const [sortBy, setSortBy] = useState('none');
   const [location, setLocation] = useState(""); // State für die ausgewählte Location
-
+  const [searchTerm, setSearchTerm] = useState("");
   const handleCarSelect = (car) => {
     setSelectedCar(car);
   };
@@ -175,10 +175,22 @@ const App = () => {
     setLocation(selectedLocation);
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
-    <div className="app">
+    <div className="app"> 
       <h1>BBW Cars</h1>
       <h2>Autovermietung Winterthur</h2>
+      <div className="search">
+        <input
+          type="text"
+          placeholder="Suche nach deinem Lieblingsmodell"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+      </div>
       {/* Radio-Buttons zur Auswahl der Location */}
       <div className="location-options">
         <label>
@@ -229,27 +241,37 @@ const App = () => {
       </div>
 
       <div className="car-list">
-        {sortCars(sortBy).filter(car => !location || car.location === location).map((car, index) => (
-          <CarItem key={index} car={car} onCarSelect={handleCarSelect} />
-        ))}
-      </div>
+  {sortCars(sortBy)
+    .filter(car => (!location || car.location === location) && car.model.toLowerCase().includes(searchTerm.toLowerCase())) // Filter für Suchbegriff nach Modell ändern
+    .map((car, index) => (
+      <CarItem key={index} car={car} onCarSelect={handleCarSelect} />
+    ))}
+
+  {sortCars(sortBy)
+    .filter(car => (!location || car.location === location) && car.model.toLowerCase().includes(searchTerm.toLowerCase())).length === 0 && (
+      <div className="error-message">Keine Treffer gefunden</div>
+    )}
+</div>
+
+
+
       {selectedCar && (
         <RentForm selectedCar={selectedCar} onRentSubmit={handleRentSubmit} />
       )}
       {confirmation && (
-        <div className="confirmation">
-          <h2>Vielen Dank für Ihre Reservierung!</h2>
-          <p>Details:</p>
-          <p>Auto: {confirmation.car}</p>
-          <p>Abholdatum: {confirmation.pickupDate}</p>
-          <p>Rückgabedatum: {confirmation.returnDate}</p>
-          <p>Vorname: {confirmation.firstName}</p>
-          <p>Nachname: {confirmation.lastName}</p>
-          <p>Email: {confirmation.email}</p>
-          <p>Telefonnummer: {confirmation.phone}</p>
-          <p>Adresse: {confirmation.address}</p>
-        </div>
-      )}
+  <div className="confirmation">
+    <h2>Vielen Dank für Ihre Reservierung!</h2>
+    <p className="confirmation-details">Details:</p>
+    <p className="confirmation-details">Auto: <span className="confirmation-value">{confirmation.car}</span></p>
+    <p className="confirmation-details">Abholdatum: <span className="confirmation-value">{confirmation.pickupDate}</span></p>
+    <p className="confirmation-details">Rückgabedatum: <span className="confirmation-value">{confirmation.returnDate}</span></p>
+    <p className="confirmation-details">Vorname: <span className="confirmation-value">{confirmation.firstName}</span></p>
+    <p className="confirmation-details">Nachname: <span className="confirmation-value">{confirmation.lastName}</span></p>
+    <p className="confirmation-details">Email: <span className="confirmation-value">{confirmation.email}</span></p>
+    <p className="confirmation-details">Telefonnummer: <span className="confirmation-value">{confirmation.phone}</span></p>
+    <p className="confirmation-details">Adresse: <span className="confirmation-value">{confirmation.address}</span></p>
+  </div>
+)}
       <Footer />
     </div>
   );

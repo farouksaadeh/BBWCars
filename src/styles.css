@@ -59,13 +59,13 @@ h2 {
     gap: 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1568px) {
     .car-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 876px) {
     .car-list {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -130,11 +130,25 @@ h2 {
 
 .confirmation {
     margin-top: 30px;
-    background-color: #dff0d8;
+    background-color: #dff0d8; /* Behalten Sie den grünen Hintergrund bei */
     border: 1px solid #c3e6cb;
     border-radius: 10px;
     padding: 25px;
-}
+  }
+  
+  .confirmation h2 {
+    color: #008000;
+  }
+  
+  .confirmation-details {
+    margin-bottom: 10px;
+    font-weight: bold; /* Setzen Sie das Detail auf fett */
+  }
+  
+  .confirmation-value {
+    font-weight: normal; /* Setzen Sie den Wert auf normal (nicht fett) */
+  }
+  
 
 .footer {
     text-align: center;
@@ -147,7 +161,7 @@ h2 {
     padding: 80px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 876px) {
     .form, .location-options, .sort-options, .car-list {
         padding-left: 20px;
         padding-right: 20px;
@@ -344,4 +358,31 @@ h2 {
     background-color: #d7d8da;
 }
 
+.search {
+    margin: 20px auto;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Responsive Stile */
+  @media screen and (max-width: 768px) {
+    .search {
+      max-width: 80%;
+    }
+  }
 
+  .error-message {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ff0000;
+    display: flex;
+    justify-content: center;
+  }
