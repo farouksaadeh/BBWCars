@@ -46,7 +46,7 @@ const App = () => {
       image: 'https://th.bing.com/th/id/R.28447904238ec690f765419396977ea3?rik=bQUEZyNNPF8kWw&riu=http%3a%2f%2fperformancedrive.com.au%2fwp-content%2fuploads%2f2017%2f09%2f2017-Ford-Mustang-GT-hero.jpg&ehk=bPO6fI06pGrh7Gp8paSAkfnZe9I%2fOlHyJRMMadV6ghk%3d&risl=&pid=ImgRaw&r=0',
       price: 150,
       kilometers: 300,
-      location: 'Arrgau'
+      location: 'Aargau'
     },
     {
       model: 'Honda Civic',
@@ -74,7 +74,7 @@ const App = () => {
       image: 'https://fleetimages.bobitstudios.com/upload/automotive-fleet/content/news/vehicles/subaru/subaru-outback-2020-driving.jpg',
       price: 120,
       kilometers: 240,
-      location: 'Arrgau'
+      location: 'Aargau'
     },
     {
       model: 'Nissan Altima',
@@ -88,7 +88,7 @@ const App = () => {
       image: 'https://media.autoexpress.co.uk/image/private/s--LfV7cUyR--/v1607680651/autoexpress/2020/12/2021%20Kia%20Sportage%20exclusive%20images.jpg',
       price: 85,
       kilometers: 170,
-      location: 'Arrgau'
+      location: 'Aargau'
     },
     {
       model: 'BMW 3 Series',
@@ -116,7 +116,7 @@ const App = () => {
       image: 'https://www.assobrav.com.br/wp-content/uploads/2020/11/audi-q5-sportback-45-tfsi-quattro-s-line-83-08be03e909680657.jpg',
       price: 125,
       kilometers: 250,
-      location: 'Arrgau'
+      location: 'Aargau'
 
     },
     {
@@ -124,7 +124,7 @@ const App = () => {
       image: 'https://th.bing.com/th/id/OIP.4IPBdKQHKnKcrXg07hZO4AHaE8?rs=1&pid=ImgDetMain',
       price: 135,
       kilometers: 270,
-      location: 'Arrgau'
+      location: 'Aargau'
     },
     {
       model: 'Tesla Model 3',
@@ -139,7 +139,8 @@ const App = () => {
       price: 250,
       kilometers: 500,
       location: 'Zürich'
-    }
+    },
+    
     
   ];
 
@@ -190,7 +191,13 @@ const App = () => {
           value={searchTerm}
           onChange={handleSearch}
         />
-      </div>
+        
+      {sortCars(sortBy)
+    .filter(car => (!location || car.location === location) && car.model.toLowerCase().includes(searchTerm.toLowerCase())).length === 0 && (
+      <div className="error-message">Keine Treffer gefunden</div>
+    )}
+</div>
+
       {/* Radio-Buttons zur Auswahl der Location */}
       <div className="location-options">
         <label>
@@ -223,11 +230,11 @@ const App = () => {
         <label>
           <input
             type="radio"
-            value="Arrgau"
-            checked={location === "Arrgau"}
-            onChange={() => handleLocationChange("Arrgau")}
+            value="Aargau"
+            checked={location === "Aargau"}
+            onChange={() => handleLocationChange("Aargau")}
           />
-          Arrgau
+          Aargau
         </label>
       </div>
 
@@ -246,12 +253,7 @@ const App = () => {
     .map((car, index) => (
       <CarItem key={index} car={car} onCarSelect={handleCarSelect} />
     ))}
-
-  {sortCars(sortBy)
-    .filter(car => (!location || car.location === location) && car.model.toLowerCase().includes(searchTerm.toLowerCase())).length === 0 && (
-      <div className="error-message">Keine Treffer gefunden</div>
-    )}
-</div>
+    </div>
 
 
 
@@ -272,7 +274,9 @@ const App = () => {
     <p className="confirmation-details">Adresse: <span className="confirmation-value">{confirmation.address}</span></p>
   </div>
 )}
+
       <Footer />
+      
     </div>
   );
 };

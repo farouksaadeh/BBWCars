@@ -18,6 +18,7 @@ const RentForm = ({ selectedCar, onRentSubmit }) => {
       alert('Please agree to the terms and conditions');
       return;
     }
+    
     onRentSubmit({
       car: selectedCar.model,
       pickupDate,
